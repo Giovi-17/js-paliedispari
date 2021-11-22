@@ -4,8 +4,21 @@ Sommiamo i due numeri
 Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto. */
 
-const parDispari = prompt('Scegli fra pari e dispari');
-const num = parseInt( prompt('Inserisci un numero fra 1 e 5') );
+let parDispari;
+
+//controllo dell'inserimento pari e dispari
+do{
+    parDispari = prompt('Scegli fra pari e dispari');
+    console.log(parDispari);
+}while((parDispari !== "pari")&&(parDispari !== "dispari"));
+
+let num;
+
+//controllo dell'inserimento del numero fra 1 e 5
+do{
+    num = parseInt( prompt('Inserisci un numero fra 1 e 5') );
+}while((num < 1)||(num > 5));
+
 const numPC = numberGenerator();
 
 const somma = num + numPC; 
@@ -28,6 +41,8 @@ function numberGenerator(){
 }
 
 //Controllo che il numero sia pari o dispari
+//e restituisco una stringa corrispondente al tipo di numero
+//(o pari o dispari)
 function numPariDispari(somma,numString){
     if(somma % 2 === 0){
         numString = "pari";
